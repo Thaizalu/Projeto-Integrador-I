@@ -1,0 +1,25 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+
+
+    <section class="galeria">
+        <div class="cards">
+            <h2 class="cards__titulo">Lista de Pacientes Cadastrados</h2>
+            <ul class="cards__lista">
+                {% if cards %}
+                    {% for paciente in cards %}
+                        <li class="card">
+                            <a href="{% url 'paciente' paciente.id %}" class="card__link">
+                                <p class="card__titulo">{{ paciente.nome }}</p>
+                            </a>
+                        </li>
+                    {% endfor %}
+                {% else %}
+                    <p>Não há pacientes para exibir.</p>
+                {% endif %}
+            </ul>
+        </div>
+    </section>
+</section>
+{% endblock %}

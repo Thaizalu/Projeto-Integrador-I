@@ -1,0 +1,16 @@
+{% load static %}
+<div class="pagina-inicial">
+    <header class="cabecalho">
+        <img class="logo" src="{% static '/assets/logo/Logo(2).png' %}" alt="Logo do GACCI" />
+        {% include 'partials/_alertas.html' %}
+
+    </header>
+    <main class="principal">
+        <section class="menu-lateral">
+            <nav class="menu-lateral__navegacao">
+                <a href="{% url 'index' %}"><img class = "icone_menu" src="{% static '/assets/icones/1x/home.png' %}"> Pacientes</a>
+                <a href="{% url 'novo_paciente' %}"><img class = "icone_menu" src="{% static '/assets/icones/1x/cadastro.png' %}"> Cadastro </a>
+                <a href="{% url 'login' %}"><img class = "icone_menu" src="{% static '/assets/icones/1x/login.png' %}"> Login</a>
+                <a href="{% url 'logout' %}"><img class = "icone_menu" src="{% static '/assets/icones/1x/logout.png' %}"> Logout</a>
+            </nav>
+        </section>
