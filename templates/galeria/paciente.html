@@ -1,0 +1,40 @@
+{% extends 'shared/base.html' %}
+{% load static %}
+{% block content %}
+<section class="conteudo">
+    <section class="paciente">
+        <div class="paciente__conteudo">
+            <table class="key-value-list">
+ 
+                <tr> <td class = "content_valueNome" colspan="2">{{ Paciente.nome }}</td></tr>
+                <tr> <td class = "key_value">Endereço:</td> <td class="content_value"> {{ Paciente.endereco }}, {{ Paciente.numero }} - {{ Paciente.bairro }}</td></tr>
+                <tr> <td class = "key_value">Data de Nascimento</td> <td class="content_value"> {{ Paciente.data_nascimento }} - {{Paciente.idade}} anos</td></tr>
+                <tr> <td class = "key_value">Contato:</td> <td class="content_value"> {{ Paciente.telefone }}</td></tr>
+                <tr> <td class = "key_value">Documentos:</td> <td class="content_value">RG: {{Paciente.rg}} - CPF: {{ Paciente.cpf }}</td></tr>
+                <tr> <td class = "key_value">Local de Trabalho:</td> <td class="content_value"> {{ Paciente.local_trabalho}}</td></tr>
+                <tr> <td class = "key_value">Grau de Instrução:</td> <td class="content_value"> {{ Paciente.grau_instrucao }}</td></tr>
+                <tr> <td class = "key_value">Renda Mensal:</td> <td class="content_value"> {{ Paciente.renda_mensal }}</td></tr>
+                <tr> <td class = "key_value">Estado Civil:</td> <td class="content_value"> {{ Paciente.estado_civil }}</td></tr>
+                <tr> <td class = "key_value">Composição Familiar:</td> <td class="content_value"> {{ Paciente.composicao_familiar }}</td></tr>
+                <tr> <td class = "key_value">Tipo de Habitação:</td> <td class="content_value"> {{ Paciente.habitacao }} - Valor do aluguel ou financiamento: R${{Paciente.valor_habitacao}}</td></tr>
+                <tr> <td class = "key_value">Opções de auxílio ou previdência:</td> <td class="content_value"> {{ Paciente.saude}}</td></tr>
+                <tr> <td class = "key_value">Problemas de saúde na família:</td> <td class="content_value"> {{ Paciente.saude_familia }}</td></tr>
+                <tr> <td class = "key_value">Diagnóstico:</td> <td class="content_value"> {{ Paciente.diagnostico }}</td></tr>
+                <tr> <td class = "key_value">Providência:</td> <td class="content_value"> {{ Paciente.providencia }}</td></tr>
+                <tr> <td class = "key_value">Tipo de auxílio solicitado:</td> <td class="content_value"> {{ Paciente.auxilio_solicitado }}</td></tr>
+                <tr> <td class = "key_value">Data de Cadastro:</td> <td class="content_value"> {{ Paciente.data }}</td></tr>
+                <tr> <td class = "key_value">Observação:</td> <td class="content_value"> {{ Paciente.observacao }}</td></tr>
+            </table>    
+                <div>
+                    <a href="{% url 'editar_ficha' Paciente.id %}">
+                        <button class="btn btn-success col-12" style="padding: top 5px;">Editar</button>
+                    </a>
+                    <a href="{% url 'deletar_paciente' Paciente.id %}">
+                        <button class="btn btn-danger col-12" style="padding: top 5px;">Deletar</button>
+                    </a>
+                </div>
+           
+        </div>
+    </section>
+</section>
+{% endblock %}
