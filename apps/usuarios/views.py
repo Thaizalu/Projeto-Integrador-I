@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from apps.usuarios.forms import LoginForms, CadastroForms
-from apps.galeria.forms import PacienteForms
+from apps.gacci.forms import PacienteForms
 from django.contrib.auth.models import User
 from django.contrib import auth
 from django.contrib import messages
@@ -75,4 +75,4 @@ def novo_paciente(request):
     else:
         form = PacienteForms()
 
-    return render(request, 'galeria/novo_paciente.html', {'form': form})
+    return render(request, 'gacci/novo_paciente.html', {'form': form})
